@@ -11,7 +11,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="relative py-32 px-4 z-10">
+    <section id="faq" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-3xl mx-auto">
         <SectionHeading title="FAQ" subtitle="Common Questions" glow="blue" />
 

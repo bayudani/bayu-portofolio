@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { PROFILE_DATA } from "@/src/data/profile";
 import { TypeAnimation } from "@/src/components/shared/TypeAnimation";
 import { FloatingCard } from "@/src/components/shared/FloatingCard";
+import { useState, useEffect } from "react";
 
 const TYPING_WORDS = [
   "Fullstack Developer",
@@ -36,10 +37,19 @@ const TECH_COLORS: Record<string, string> = {
 };
 
 export function Hero() {
+  const [orbitR, setOrbitR] = useState(140);
+
+  useEffect(() => {
+    const check = () => setOrbitR(window.innerWidth < 640 ? 110 : 140);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 pt-20 pb-32 z-10"
+      className="relative min-h-screen flex items-center justify-center px-4 pt-16 pb-24 md:pt-20 md:pb-32 z-10"
       aria-label="Hero"
     >
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
@@ -66,7 +76,7 @@ export function Hero() {
 
           {/* Name & Title */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
               <span className="text-white">Bayu</span>{" "}
               <span className="text-gradient">Dani</span>
               <br />
@@ -136,7 +146,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
           className="relative flex items-center justify-center"
         >
-          <div className="relative w-72 h-72 md:w-80 md:h-80">
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 overflow-hidden">
             {/* Orbit ring */}
             <div className="absolute inset-0 rounded-full border border-purple-500/20" />
             <div className="absolute inset-4 rounded-full border border-purple-500/10" />
@@ -145,7 +155,7 @@ export function Hero() {
             <div className="absolute inset-0 animate-[spin_20s_linear_infinite]">
               {ORBIT_TECH_LIST.map((tech) => {
                 const rad = (tech.angle * Math.PI) / 180;
-                const r = 140;
+                const r = orbitR;
                 const x = Math.round(Math.cos(rad) * r);
                 const y = Math.round(Math.sin(rad) * r);
                 return (
@@ -179,23 +189,23 @@ export function Hero() {
           </div>
 
           {/* Floating cards around profile */}
-          <FloatingCard className="absolute -top-4 right-4 glass rounded-xl px-4 py-2 shadow-lg" delay={0}>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-400" />
-              <span className="text-xs font-medium text-white">Fullstack Dev</span>
+          <FloatingCard className="absolute -top-2 right-0 sm:-top-4 sm:right-4 glass rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg" delay={0}>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400" />
+              <span className="text-[10px] sm:text-xs font-medium text-white">Fullstack Dev</span>
             </div>
           </FloatingCard>
 
-          <FloatingCard className="absolute -bottom-2 left-4 glass rounded-xl px-4 py-2 shadow-lg" delay={1}>
-            <div className="flex items-center gap-2">
-              <ExternalLink className="w-3 h-3 text-purple-400" />
-              <span className="text-xs font-medium text-white">10+ Projects</span>
+          <FloatingCard className="absolute -bottom-1 left-2 sm:-bottom-2 sm:left-4 glass rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg" delay={1}>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <ExternalLink className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-400" />
+              <span className="text-[10px] sm:text-xs font-medium text-white">10+ Projects</span>
             </div>
           </FloatingCard>
 
-          <FloatingCard className="absolute top-12 -left-6 glass rounded-xl px-4 py-2 shadow-lg" delay={0.5}>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-medium text-purple-400">#OpenToWork</span>
+          <FloatingCard className="absolute top-10 -left-3 sm:top-12 sm:-left-6 glass rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg" delay={0.5}>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="text-[10px] sm:text-xs font-medium text-purple-400">#OpenToWork</span>
             </div>
           </FloatingCard>
         </motion.div>

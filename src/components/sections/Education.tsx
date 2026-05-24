@@ -7,7 +7,7 @@ import { EDUCATION_DATA } from "@/src/data/education";
 
 export function Education() {
   return (
-    <section id="education" className="relative py-32 px-4 z-10">
+    <section id="education" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="Education" subtitle="Academic" glow="purple" />
 

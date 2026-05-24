@@ -19,7 +19,7 @@ export function SectionHeading({ title, subtitle, glow = "purple" }: SectionHead
           </span>
           <div className={`h-px w-8 ${glow === "purple" ? "bg-purple-500/50" : glow === "blue" ? "bg-blue-500/50" : "bg-teal-500/50"}`} />
         </div>
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
           {title}
         </h2>
       </div>

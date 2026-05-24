@@ -14,26 +14,26 @@ const EXPERTISE = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-32 px-4 z-10">
+    <section id="about" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-7xl mx-auto">
         <SectionHeading title="About Me" subtitle="Introduction" glow="purple" />
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <Reveal direction="left">
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 I am a dedicated Software Engineering student at Politeknik State Of Bengkalis, 
                 based in Bengkalis, Riau, Indonesia. I specialize in building fullstack web 
                 applications, mobile applications, AI-integrated systems, and augmented reality 
                 experiences.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 With over 2 years of hands-on experience, I have delivered 10+ projects ranging 
                 from AI-powered cultural platforms to gym management systems. I am passionate 
                 about leveraging technology to solve real-world problems and create impactful 
                 digital products.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 My expertise spans across the full development stack — from architecting 
                 scalable backend systems with Node.js and Laravel, to building intuitive 
                 frontend interfaces, to integrating cutting-edge AI and AR capabilities.

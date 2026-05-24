@@ -8,7 +8,7 @@ import { JOURNEY_DATA } from "@/src/data/journey";
 
 export function Journey() {
   return (
-    <section id="journey" className="relative py-32 px-4 z-10">
+    <section id="journey" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="My Journey" subtitle="Roadmap" glow="accent" />
 

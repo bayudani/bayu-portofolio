@@ -40,7 +40,7 @@ export function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="relative py-32 px-4 z-10">
+    <section id="contact" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="Contact" subtitle="Get in Touch" glow="purple" />
 
@@ -104,36 +104,36 @@ export function Contact() {
 
               <div className="glass rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-500">
                 <h3 className="text-white font-semibold mb-3">Social</h3>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-2">
                   <a
                     href={PROFILE_DATA.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 glass rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:text-white hover:border-purple-500/30 transition-all"
+                    className="flex items-center gap-1.5 glass rounded-xl px-3 py-2 text-xs sm:text-sm text-muted-foreground hover:text-white hover:border-purple-500/30 transition-all"
                     aria-label="GitHub"
                   >
-                    <FaGithub className="w-4 h-4" />
-                    GitHub
+                    <FaGithub className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">GitHub</span>
                   </a>
                   <a
                     href={PROFILE_DATA.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 glass rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:text-white hover:border-purple-500/30 transition-all"
+                    className="flex items-center gap-1.5 glass rounded-xl px-3 py-2 text-xs sm:text-sm text-muted-foreground hover:text-white hover:border-purple-500/30 transition-all"
                     aria-label="LinkedIn"
                   >
-                    <FaLinkedin className="w-4 h-4" />
-                    LinkedIn
+                    <FaLinkedin className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">LinkedIn</span>
                   </a>
                   <a
                     href={PROFILE_DATA.socials.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 glass rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:text-white hover:border-purple-500/30 transition-all"
+                    className="flex items-center gap-1.5 glass rounded-xl px-3 py-2 text-xs sm:text-sm text-muted-foreground hover:text-white hover:border-purple-500/30 transition-all"
                     aria-label="Instagram"
                   >
-                    <FaInstagram className="w-4 h-4" />
-                    Instagram
+                    <FaInstagram className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Instagram</span>
                   </a>
                 </div>
               </div>

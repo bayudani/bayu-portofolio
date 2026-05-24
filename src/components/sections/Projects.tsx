@@ -14,7 +14,7 @@ export function Projects() {
   const sideProjects = featured.slice(1);
 
   return (
-    <section id="projects" className="relative py-32 px-4 z-10">
+    <section id="projects" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-7xl mx-auto">
         <SectionHeading title="Featured Projects" subtitle="Projects" glow="blue" />
 

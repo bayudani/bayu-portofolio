@@ -7,7 +7,7 @@ import { EXPERIENCE_DATA } from "@/src/data/experience";
 
 export function Experience() {
   return (
-    <section id="experience" className="relative py-32 px-4 z-10">
+    <section id="experience" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="Experience" subtitle="Work" glow="accent" />
 

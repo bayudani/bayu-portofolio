@@ -7,7 +7,7 @@ import { AWARDS_DATA } from "@/src/data/awards";
 
 export function Achievement() {
   return (
-    <section id="achievement" className="relative py-32 px-4 z-10">
+    <section id="achievement" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="Achievements" subtitle="Awards" glow="accent" />
 

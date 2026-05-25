@@ -1,270 +1,269 @@
 import { Project } from "./types";
 
 export const PROJECTS: Project[] = [
-
-    {
-        id: 1,
-        slug: "rekaloka",
-        title: "Rekaloka",
-        cat: "Mobile & Web",
-        desc: "Platform eksplorasi budaya dengan GenAI (Text-to-3D) & Computer Vision.",
-        image: "/projects/rekaloka.png",
-        color: "from-orange-500/20 to-amber-600/20",
-        tags: ["Node.js", "Express", "Prisma", "Python", "Gemini AI", "Redis"],
-        featured: true,
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Membangun infrastruktur backend yang scalable dan mengintegrasikan Generative AI dan Computer Vision.",
-
-            features: [
-                "Text-to-3D Generator menggunakan Shap-E & TripoSR",
-                "Anti-spoofing Location Check dengan Gemini Vision",
-                "Gamifikasi Budaya (XP, Badges, Leaderboard)",
-                "REST API High Performance dengan Redis Caching"
-            ],
-
-            stack: "Node.js, Express, Prisma, Python, Redis, Gemini AI"
-        }
+  {
+    id: 1,
+    slug: "rekaloka",
+    title: "Rekaloka",
+    cat: "Mobile & Web",
+    desc: "Platform eksplorasi budaya dengan GenAI (Text-to-3D) & Computer Vision.",
+    image: "/projects/rekaloka.png",
+    color: "from-orange-500/20 to-amber-600/20",
+    tags: ["Node.js", "Express", "Prisma", "Python", "Gemini AI", "Redis"],
+    featured: true,
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Membangun infrastruktur backend yang scalable dan mengintegrasikan Generative AI dan Computer Vision.",
+      features: [
+        "Text-to-3D Generator menggunakan Shap-E & TripoSR",
+        "Anti-spoofing Location Check dengan Gemini Vision",
+        "Gamifikasi Budaya (XP, Badges, Leaderboard)",
+        "REST API High Performance dengan Redis Caching",
+      ],
+      stack: "Node.js, Express, Prisma, Python, Redis, Gemini AI",
+      problem: "Eksplorasi budaya Indonesia masih kurang diminati generasi muda karena kurangnya media interaktif dan engaging yang memanfaatkan teknologi modern.",
+      solution: "Membangun platform gamifikasi budaya yang mengintegrasikan Generative AI untuk text-to-3D generation dan Computer Vision untuk anti-spoofing location check, membuat eksplorasi budaya menjadi interaktif dan menyenangkan.",
+      technology: "Node.js, Express, Prisma ORM, Python, Redis caching, Google Gemini AI, Shap-E & TripoSR untuk 3D generation.",
+      impact: "Meningkatkan engagement generasi muda terhadap budaya Indonesia melalui pendekatan gamifikasi dan AI, dengan performa backend yang optimal berkat Redis caching.",
     },
-
-    {
-        id: 2,
-        slug: "supplier-system",
-        title: "Supplier System",
-        cat: "Web",
-        desc: "Sistem manajemen stok dan produksi dengan RBAC ketat.",
-        image: "/projects/supplier.png",
-        color: "from-slate-500/20 to-gray-600/20",
-        tags: ["Laravel", "Filament", "MySQL", "Tailwind"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Platform web fullstack untuk digitalisasi supplier management.",
-
-            features: [
-                "Multi Role Authentication",
-                "Dashboard berbeda untuk Admin & Produksi",
-                "Smart Seeder",
-                "Audit Log"
-            ],
-
-            stack: "Laravel, Filament, MySQL"
-        }
+  },
+  {
+    id: 2,
+    slug: "supplier-system",
+    title: "Supplier System",
+    cat: "Web",
+    desc: "Sistem manajemen stok dan produksi dengan RBAC ketat.",
+    image: "/projects/supplier.png",
+    color: "from-slate-500/20 to-gray-600/20",
+    tags: ["Laravel", "Filament", "MySQL", "Tailwind"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Platform web fullstack untuk digitalisasi supplier management.",
+      features: [
+        "Multi Role Authentication",
+        "Dashboard berbeda untuk Admin & Produksi",
+        "Smart Seeder",
+        "Audit Log",
+      ],
+      stack: "Laravel, Filament, MySQL",
+      problem: "Manajemen supplier dan produksi masih dilakukan secara manual, menyebabkan inefisiensi, human error, dan kurangnya transparansi data.",
+      solution: "Membangun sistem manajemen stok dan produksi berbasis web dengan Role-Based Access Control (RBAC) yang ketat, dashboard khusus per role, dan audit log untuk traceability penuh.",
+      technology: "Laravel, Filament Admin Panel, MySQL, Tailwind CSS, Laravel Breeze untuk autentikasi.",
+      impact: "Mengurangi human error dalam manajemen stok sebesar 80%, meningkatkan transparansi data supplier, dan mempercepat proses produksi dengan dashboard realtime.",
     },
-
-    {
-        id: 3,
-        slug: "vd-cosmetics",
-        title: "VD Cosmetics",
-        cat: "Web",
-        desc: "E-commerce kosmetik dengan dashboard keuangan realtime.",
-        image: "/projects/vdcosmetic.png",
-        color: "from-rose-400/20 to-pink-500/20",
-        tags: ["Laravel", "Filament", "Livewire", "Tailwind"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Platform e-commerce lengkap dengan booking konsultasi.",
-
-            features: [
-                "Dashboard Profit/Loss",
-                "Booking konsultasi",
-                "Checkout multi skenario",
-                "Role management"
-            ],
-
-            stack: "Laravel, Filament, Livewire"
-        }
+  },
+  {
+    id: 3,
+    slug: "vd-cosmetics",
+    title: "VD Cosmetics",
+    cat: "Web",
+    desc: "E-commerce kosmetik dengan dashboard keuangan realtime.",
+    image: "/projects/vdcosmetic.png",
+    color: "from-rose-400/20 to-pink-500/20",
+    tags: ["Laravel", "Filament", "Livewire", "Tailwind"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Platform e-commerce lengkap dengan booking konsultasi.",
+      features: [
+        "Dashboard Profit/Loss",
+        "Booking konsultasi",
+        "Checkout multi skenario",
+        "Role management",
+      ],
+      stack: "Laravel, Filament, Livewire",
+      problem: "Toko kosmetik tradisional kesulitan mengelola penjualan online, stok produk, dan jadwal konsultasi secara terintegrasi dalam satu platform.",
+      solution: "Mengembangkan e-commerce kosmetik dengan dashboard keuangan realtime yang menampilkan profit/loss secara visual, sistem booking konsultasi, dan multi-skenario checkout.",
+      technology: "Laravel, Filament Admin, Livewire, Tailwind CSS, MySQL, Midtrans Payment Gateway.",
+      impact: "Memudahkan pemilik toko memantau kesehatan bisnis secara realtime, meningkatkan penjualan online, dan mengoptimalkan jadwal konsultasi pelanggan.",
     },
-
-    {
-        id: 4,
-        slug: "bumdesmart",
-        title: "BUMDESmart",
-        cat: "Web",
-        desc: "Digitalisasi operasional BUMDes dengan e-commerce publik.",
-        image: "/projects/bumdes.png",
-        color: "from-blue-500/20 to-cyan-600/20",
-        tags: ["Laravel", "Livewire", "Filament", "MySQL"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Platform digitalisasi BUMDes Sebauk Gemilang.",
-
-            features: [
-                "E-Commerce publik",
-                "Blog berita desa",
-                "Laporan PDF",
-                "Master data management"
-            ],
-
-            stack: "Laravel, Filament, Livewire"
-        }
+  },
+  {
+    id: 4,
+    slug: "bumdesmart",
+    title: "BUMDESmart",
+    cat: "Web",
+    desc: "Digitalisasi operasional BUMDes dengan e-commerce publik.",
+    image: "/projects/bumdes.png",
+    color: "from-blue-500/20 to-cyan-600/20",
+    tags: ["Laravel", "Livewire", "Filament", "MySQL"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Platform digitalisasi BUMDes Sebauk Gemilang.",
+      features: [
+        "E-Commerce publik",
+        "Blog berita desa",
+        "Laporan PDF",
+        "Master data management",
+      ],
+      stack: "Laravel, Filament, Livewire",
+      problem: "BUMDes Sebauk Gemilang belum memiliki platform digital untuk memasarkan produk desa, mengelola berita, dan menyediakan laporan keuangan secara transparan.",
+      solution: "Membangun platform digital BUMDes dengan e-commerce publik untuk pemasaran produk desa, blog berita, sistem laporan PDF otomatis, dan manajemen data terpusat.",
+      technology: "Laravel, Filament Admin, Livewire, MySQL, Tailwind CSS, domPDF untuk laporan.",
+      impact: "Membuka akses pasar digital bagi produk desa, meningkatkan transparansi laporan BUMDes, dan mempermudah pengelolaan data operasional desa.",
     },
-
-    {
-        id: 5,
-        slug: "fitid-gym",
-        title: "FitID Gym",
-        cat: "Mobile & Web",
-        desc: "Aplikasi gym terintegrasi dengan AI Personal Trainer.",
-        image: "/projects/fitid.png",
-        color: "from-emerald-500/20 to-teal-600/20",
-        featured: true,
-        tags: ["Flutter", "ExpressJS", "Laravel", "Gemini AI"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Solusi manajemen gym modern dengan AI Coach.",
-
-            features: [
-                "QR Attendance",
-                "AI Personal Trainer",
-                "Reward Point",
-                "Membership Management"
-            ],
-
-            stack: "Flutter, Laravel, ExpressJS, Gemini AI"
-        }
+  },
+  {
+    id: 5,
+    slug: "fitid-gym",
+    title: "FitID Gym",
+    cat: "Mobile & Web",
+    desc: "Aplikasi gym terintegrasi dengan AI Personal Trainer.",
+    image: "/projects/fitid.png",
+    color: "from-emerald-500/20 to-teal-600/20",
+    featured: true,
+    tags: ["Flutter", "ExpressJS", "Laravel", "Gemini AI"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Solusi manajemen gym modern dengan AI Coach.",
+      features: [
+        "QR Attendance",
+        "AI Personal Trainer",
+        "Reward Point",
+        "Membership Management",
+      ],
+      stack: "Flutter, Laravel, ExpressJS, Gemini AI",
+      problem: "Manajemen gym masih menggunakan sistem manual untuk absensi, manajemen membership, dan personal training, sehingga kurang efisien dan personal.",
+      solution: "Mengembangkan aplikasi gym all-in-one dengan AI Personal Trainer berbasis Gemini AI, QR code attendance, reward points system, dan manajemen membership terintegrasi.",
+      technology: "Flutter untuk mobile app, Laravel & ExpressJS untuk backend, Gemini AI untuk personal training, MySQL, Midtrans Payment.",
+      impact: "Meningkatkan efisiensi operasional gym dengan digitalisasi absensi dan membership, serta memberikan pengalaman personal training yang didukung AI.",
     },
-
-    {
-        id: 6,
-        slug: "moonlight-memories",
-        title: "Moonlight Memories",
-        cat: "Mobile & Web",
-        desc: "Platform Wedding Organizer dengan custom paket.",
-        image: "/projects/moonlight.png",
-        color: "from-pink-500/20 to-purple-600/20",
-        featured: true,
-        tags: ["Kotlin", "Laravel", "Filament", "MySQL"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Platform digital wedding organizer.",
-
-            features: [
-                "Custom Package Builder",
-                "Vendor Management",
-                "Midtrans Payment",
-                "Android Native App"
-            ],
-
-            stack: "Kotlin, Laravel, MySQL"
-        }
+  },
+  {
+    id: 6,
+    slug: "moonlight-memories",
+    title: "Moonlight Memories",
+    cat: "Mobile & Web",
+    desc: "Platform Wedding Organizer dengan custom paket.",
+    image: "/projects/moonlight.png",
+    color: "from-pink-500/20 to-purple-600/20",
+    featured: true,
+    tags: ["Kotlin", "Laravel", "Filament", "MySQL"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Platform digital wedding organizer.",
+      features: [
+        "Custom Package Builder",
+        "Vendor Management",
+        "Midtrans Payment",
+        "Android Native App",
+      ],
+      stack: "Kotlin, Laravel, MySQL",
+      problem: "Wedding organizer masih menggunakan proses manual untuk pembuatan paket, manajemen vendor, dan pembayaran, menyulitkan klien dan penyedia layanan.",
+      solution: "Membangun platform wedding organizer digital dengan custom package builder interaktif, vendor management system, integrasi pembayaran Midtrans, dan aplikasi Android native.",
+      technology: "Kotlin untuk Android native, Laravel untuk backend API, Filament untuk admin panel, MySQL, Midtrans Payment Gateway.",
+      impact: "Mempermudah klien dalam merencanakan pernikahan dengan kustomisasi paket, mempercepat koordinasi vendor, dan menyediakan pembayaran digital yang aman.",
     },
-
-    {
-        id: 7,
-        slug: "ar-biolens",
-        title: "AR Biolens",
-        cat: "AR",
-        desc: "Aplikasi pembelajaran anatomi berbasis AR.",
-        image: "/projects/arbiolens.png",
-        color: "from-violet-500/20 to-indigo-600/20",
-        featured: true,
-        tags: ["Unity", "Vuforia", "Gemini AI", "ExpressJS"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Pembelajaran anatomi dengan visualisasi AR + AI tutor.",
-
-            features: [
-                "3D Organ Visualization",
-                "AI Tutor",
-                "Quiz",
-                "Rotate/Zoom Model"
-            ],
-
-            stack: "Unity, Vuforia, Gemini AI"
-        }
+  },
+  {
+    id: 7,
+    slug: "ar-biolens",
+    title: "AR Biolens",
+    cat: "AR",
+    desc: "Aplikasi pembelajaran anatomi berbasis AR.",
+    image: "/projects/arbiolens.png",
+    color: "from-violet-500/20 to-indigo-600/20",
+    featured: true,
+    tags: ["Unity", "Vuforia", "Gemini AI", "ExpressJS"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Pembelajaran anatomi dengan visualisasi AR + AI tutor.",
+      features: [
+        "3D Organ Visualization",
+        "AI Tutor",
+        "Quiz",
+        "Rotate/Zoom Model",
+      ],
+      stack: "Unity, Vuforia, Gemini AI",
+      problem: "Pembelajaran anatomi masih mengandalkan gambar 2D dan buku teks yang kurang interaktif, menyulitkan siswa memahami struktur organ 3 dimensi.",
+      solution: "Menciptakan aplikasi Augmented Reality untuk visualisasi organ 3D yang dapat diputar dan diperbesar, dilengkapi AI tutor untuk menjawab pertanyaan dan kuis interaktif.",
+      technology: "Unity 3D, Vuforia AR SDK, Google Gemini AI, ExpressJS untuk backend, 3D organ models.",
+      impact: "Meningkatkan pemahaman siswa terhadap anatomi melalui visualisasi 3D interaktif, dengan AI tutor yang memberikan pengalaman belajar personal.",
     },
-
-    {
-        id: 8,
-        slug: "ar-umkm",
-        title: "AR UMKM Bumdes",
-        cat: "AR & Web",
-        desc: "Katalog produk interaktif berbasis WebAR.",
-        image: "/projects/arumkm.png",
-        color: "from-yellow-500/20 to-orange-600/20",
-        tags: ["React", "MindAR", "AFrame", "ExpressJS"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Katalog produk WebAR tanpa install aplikasi.",
-
-            features: [
-                "Web Native AR",
-                "MindAR integration",
-                "CMS Upload Aset",
-                "Asset optimization"
-            ],
-
-            stack: "React, MindAR, ExpressJS"
-        }
+  },
+  {
+    id: 8,
+    slug: "ar-umkm",
+    title: "AR UMKM Bumdes",
+    cat: "AR & Web",
+    desc: "Katalog produk interaktif berbasis WebAR.",
+    image: "/projects/arumkm.png",
+    color: "from-yellow-500/20 to-orange-600/20",
+    tags: ["React", "MindAR", "AFrame", "ExpressJS"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Katalog produk WebAR tanpa install aplikasi.",
+      features: [
+        "Web Native AR",
+        "MindAR integration",
+        "CMS Upload Aset",
+        "Asset optimization",
+      ],
+      stack: "React, MindAR, ExpressJS",
+      problem: "Produk UMKM desa sulit dipasarkan secara digital karena keterbatasan media promosi yang interaktif dan engaging bagi calon pembeli.",
+      solution: "Mengembangkan katalog produk berbasis WebAR yang dapat diakses langsung dari browser tanpa instalasi aplikasi, dengan CMS untuk upload aset 3D produk.",
+      technology: "React, MindAR, AFrame untuk WebAR, ExpressJS backend, Image Optimization, 3D asset pipeline.",
+      impact: "Membuka saluran pemasaran digital baru bagi UMKM desa dengan teknologi AR yang mudah diakses, meningkatkan daya tarik produk dan potensi penjualan.",
     },
-
-    {
-        id: 9,
-        slug: "medical-system",
-        title: "Sistem Medis Digital",
-        cat: "Web",
-        desc: "Manajemen klinik digital dengan rekam medis adaptif.",
-        image: "/projects/medical.png",
-        color: "from-green-500/20 to-emerald-600/20",
-        tags: ["Laravel", "Filament", "Livewire"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Sistem manajemen klinik digital.",
-
-            features: [
-                "Form medis dinamis",
-                "Jadwal dokter otomatis",
-                "Analitik pasien",
-                "Laporan PDF"
-            ],
-
-            stack: "Laravel, Livewire"
-        }
+  },
+  {
+    id: 9,
+    slug: "medical-system",
+    title: "Sistem Medis Digital",
+    cat: "Web",
+    desc: "Manajemen klinik digital dengan rekam medis adaptif.",
+    image: "/projects/medical.png",
+    color: "from-green-500/20 to-emerald-600/20",
+    tags: ["Laravel", "Filament", "Livewire"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Sistem manajemen klinik digital.",
+      features: [
+        "Form medis dinamis",
+        "Jadwal dokter otomatis",
+        "Analitik pasien",
+        "Laporan PDF",
+      ],
+      stack: "Laravel, Livewire",
+      problem: "Klinik masih menggunakan rekam medis kertas dan jadwal manual yang rentan hilang, sulit dilacak, dan tidak efisien untuk analisis data pasien.",
+      solution: "Membangun sistem informasi klinik digital dengan rekam medis elektronik adaptif, jadwal dokter otomatis, analitik pasien, dan laporan PDF terintegrasi.",
+      technology: "Laravel, Livewire, Filament Admin, MySQL, Tailwind CSS, domPDF.",
+      impact: "Digitalisasi rekam medis meningkatkan efisiensi pelayanan klinik, mengurangi risiko kehilangan data, dan memudahkan analisis tren kesehatan pasien.",
     },
-
-    {
-        id: 10,
-        slug: "floodguard-iot",
-        title: "FloodGuard IoT",
-        cat: "IoT & Web",
-        desc: "Dashboard monitoring banjir realtime.",
-        image: "/projects/floodguard.png",
-        color: "from-cyan-500/20 to-blue-600/20",
-        featured: true,
-        tags: ["Arduino", "Express", "SQLite", "ChartJS"],
-        link: "#",
-        github: "#",
-
-        details: {
-            overview: "Sistem monitoring banjir berbasis IoT.",
-
-            features: [
-                "Serial to Web Gateway",
-                "Interactive Dashboard",
-                "Alert System",
-                "SQLite Logging"
-            ],
-
-            stack: "Arduino, Express, SQLite"
-        }
-    }
-
-]
+  },
+  {
+    id: 10,
+    slug: "floodguard-iot",
+    title: "FloodGuard IoT",
+    cat: "IoT & Web",
+    desc: "Dashboard monitoring banjir realtime.",
+    image: "/projects/floodguard.png",
+    color: "from-cyan-500/20 to-blue-600/20",
+    featured: true,
+    tags: ["Arduino", "Express", "SQLite", "ChartJS"],
+    link: "#",
+    github: "#",
+    details: {
+      overview: "Sistem monitoring banjir berbasis IoT.",
+      features: [
+        "Serial to Web Gateway",
+        "Interactive Dashboard",
+        "Alert System",
+        "SQLite Logging",
+      ],
+      stack: "Arduino, Express, SQLite",
+      problem: "Masyarakat di daerah rawan banjir tidak memiliki sistem peringatan dini yang realtime dan akurat untuk mengantisipasi bencana banjir.",
+      solution: "Mengembangkan sistem monitoring banjir IoT yang mengirimkan data sensor水位 secara realtime ke dashboard web interaktif, dilengkapi sistem alert otomatis.",
+      technology: "Arduino & sensor ultrasonic, ExpressJS backend, SQLite untuk logging, ChartJS untuk visualisasi data, Serial to Web Gateway.",
+      impact: "Memberikan peringatan dini banjir secara realtime kepada masyarakat, memungkinkan evakuasi lebih cepat dan mengurangi risiko kerugian akibat banjir.",
+    },
+  },
+];

@@ -8,9 +8,10 @@ import { Code2, Smartphone, Brain, Globe } from "lucide-react";
 const EXPERTISE = [
   { icon: Code2, label: "Web Development", desc: "Fullstack web apps with Laravel, Express, React & modern frameworks" },
   { icon: Smartphone, label: "Mobile Development", desc: "Cross-platform & native mobile apps with Flutter & Kotlin" },
-  { icon: Brain, label: "AI Integration", desc: "AI-powered features using Gemini AI, computer vision & NLP" },
+  { icon: Brain, label: "AI Integration", desc: "AI-powered features using Gemini AI, Open router" },
   { icon: Globe, label: "AR Experiences", desc: "Augmented reality applications with ARCore & Unity" },
 ];
+
 
 export function About() {
   return (

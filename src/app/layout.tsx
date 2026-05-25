@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { GridBackground } from "@/src/components/effects/GridBackground";
 import { Particles } from "@/src/components/effects/Particles";
 import { Dock } from "@/src/components/dock/Dock";
+import { AiSummary } from "@/src/components/shared/AiSummary";
+import { FAQ_DATA } from "@/src/data/faq";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050505",
   width: "device-width",
   initialScale: 1,
+  themeColor: "#050505",
 };
 
 export const metadata: Metadata = {
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
     default: "Bayu Dani Kurniawan | Fullstack Developer & Mobile Engineer",
     template: "%s | Bayu Dani Kurniawan",
   },
+  applicationName: "Bayu Dani Kurniawan Portfolio",
   description:
     "Fullstack Developer & Mobile Engineer specializing in web applications, mobile apps, AI-integrated systems, and augmented reality experiences. Based in Bengkalis, Riau, Indonesia.",
   keywords: [
@@ -47,6 +50,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Bayu Dani Kurniawan", url: "https://github.com/bayudani" }],
   creator: "Bayu Dani Kurniawan",
   publisher: "Bayu Dani Kurniawan",
+  category: "portfolio",
+  referrer: "origin-when-cross-origin",
+  generator: "Next.js",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -144,10 +150,23 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "@id": "https://bayudanikurniawan.byvictech.site/#breadcrumb",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://bayudanikurniawan.byvictech.site/#home" },
-        { "@type": "ListItem", position: 2, name: "Projects", item: "https://bayudanikurniawan.byvictech.site/#projects" },
-        { "@type": "ListItem", position: 3, name: "Contact", item: "https://bayudanikurniawan.byvictech.site/#contact" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://bayudanikurniawan.byvictech.site/" },
+        { "@type": "ListItem", position: 2, name: "About", item: "https://bayudanikurniawan.byvictech.site/about" },
+        { "@type": "ListItem", position: 3, name: "Projects", item: "https://bayudanikurniawan.byvictech.site/projects" },
+        { "@type": "ListItem", position: 4, name: "Contact", item: "https://bayudanikurniawan.byvictech.site/contact" },
       ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bayudanikurniawan.byvictech.site/#faq",
+      mainEntity: FAQ_DATA.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
     },
   ],
 };
@@ -174,7 +193,15 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#050505] text-[#F5F5F5]">
         <GridBackground />
         <Particles />
+        <AiSummary />
         {children}
+        <footer className="relative py-8 px-4 z-10 border-t border-white/5">
+          <div className="max-w-7xl mx-auto text-center">
+            <p className="text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()} Bayu Dani Kurniawan.
+            </p>
+          </div>
+        </footer>
         <Dock />
       </body>
     </html>

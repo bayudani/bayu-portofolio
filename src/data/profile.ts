@@ -9,7 +9,7 @@ export const PROFILE_DATA: ProfileData = {
     location: "Bengkalis, Riau",
 
     bio:
-        "Dedicated Software Engineering student specializing in Web and Mobile Development with strong passion in building impactful digital products.",
+        "Fullstack Developer & Mobile App Engineer. Transforming complex ideas into high-performance digital products using Laravel, Flutter, and Modern Tech. Your Partner in Digital Innovation. I build scalable Websites and Mobile Apps tailored to your needs. From concept to code, I got your back.",
 
     avatar: "/images/profile.png",
 

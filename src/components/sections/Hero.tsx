@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { PROFILE_DATA } from "@/src/data/profile";
 import { TypeAnimation } from "@/src/components/shared/TypeAnimation";
 import { FloatingCard } from "@/src/components/shared/FloatingCard";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const TYPING_WORDS = [
@@ -108,14 +109,14 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4">
-            <a
-              href="#projects"
+            <Link
+              href="/projects"
               className="group relative inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 glow-purple"
               aria-label="View Projects"
             >
               View Projects
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-            </a>
+            </Link>
             <a
               href={PROFILE_DATA.socials.github}
               target="_blank"

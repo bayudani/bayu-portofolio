@@ -12,40 +12,24 @@ import {
   Cpu,
   Mail,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#home", icon: Home },
-  { label: "About", href: "#about", icon: User },
-  { label: "Projects", href: "#projects", icon: FolderKanban },
-  { label: "Achievement", href: "#achievement", icon: Award },
-  { label: "Education", href: "#education", icon: GraduationCap },
-  { label: "Experience", href: "#experience", icon: Briefcase },
-  { label: "Journey", href: "#journey", icon: MapPin },
-  { label: "Tech Stack", href: "#tech", icon: Cpu },
-  { label: "Contact", href: "#contact", icon: Mail },
+  { label: "Home", href: "/", icon: Home },
+  { label: "About", href: "/about", icon: User },
+  { label: "Projects", href: "/projects", icon: FolderKanban },
+  { label: "Achievement", href: "/achievement", icon: Award },
+  { label: "Education", href: "/education", icon: GraduationCap },
+  { label: "Experience", href: "/experience", icon: Briefcase },
+  { label: "Journey", href: "/journey", icon: MapPin },
+  { label: "Tech Stack", href: "/tech", icon: Cpu },
+  { label: "Contact", href: "/contact", icon: Mail },
 ];
 
 export function Dock() {
-  const [active, setActive] = useState("#home");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = NAV_ITEMS.map((item) => item.href.slice(1));
-      const scrollY = window.scrollY + 200;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && el.offsetTop <= scrollY) {
-          setActive(`#${sections[i]}`);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const pathname = usePathname();
+  const active = pathname === "/" ? "/" : pathname;
 
   return (
     <motion.nav
@@ -61,14 +45,9 @@ export function Dock() {
           const isActive = active === item.href;
 
           return (
-            <a
+            <Link
               key={item.href}
               href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                setActive(item.href);
-                document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-              }}
               className="relative flex flex-col items-center gap-0.5 px-1.5 sm:px-2.5 py-1.5 group shrink-0"
               aria-label={item.label}
             >
@@ -95,7 +74,7 @@ export function Dock() {
               >
                 {item.label}
               </span>
-            </a>
+            </Link>
           );
         })}
       </div>

@@ -24,6 +24,10 @@ export interface ProjectDetails {
   overview: string;
   features: string[];
   stack: string;
+  problem: string;
+  solution: string;
+  technology: string;
+  impact: string;
 }
 
 export interface Project {

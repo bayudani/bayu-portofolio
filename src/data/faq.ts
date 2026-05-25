@@ -3,7 +3,7 @@ import { FAQItem } from "./types";
 export const FAQ_DATA: FAQItem[] = [
   {
     question: "Who is Bayu Dani Kurniawan?",
-    answer: "Bayu Dani Kurniawan is a Fullstack Developer and Mobile Engineer based in Bengkalis, Riau, Indonesia. He specializes in building fullstack web applications, mobile applications, AI-integrated systems, and augmented reality experiences. He is currently pursuing a degree in Software Engineering at Universitas Muhammadiyah Riau."
+    answer: "Bayu Dani Kurniawan is a Fullstack Developer and Mobile Engineer based in Bengkalis, Riau, Indonesia. He specializes in building fullstack web applications, mobile applications, AI-integrated systems, and augmented reality experiences. He is currently pursuing a degree in Software Engineering at Politeknik Negeri Bengkalis."
   },
   {
     question: "What technologies does Bayu use?",

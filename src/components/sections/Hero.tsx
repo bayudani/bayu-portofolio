@@ -9,7 +9,7 @@ import { PROFILE_DATA } from "@/src/data/profile";
 import { TypeAnimation } from "@/src/components/shared/TypeAnimation";
 import { FloatingCard } from "@/src/components/shared/FloatingCard";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { TECH_ICONS, TECH_COLORS } from "@/src/data/tech-icons";
 
 const TYPING_WORDS = [
   "Fullstack Developer",
@@ -19,33 +19,7 @@ const TYPING_WORDS = [
   "UI/UX Designer",
 ];
 
-const ORBIT_TECH_LIST = [
-  { name: "Laravel", angle: 0 },
-  { name: "Flutter", angle: 60 },
-  { name: "Node.js", angle: 120 },
-  { name: "Gemini", angle: 180 },
-  { name: "Kotlin", angle: 240 },
-  { name: "React", angle: 300 },
-];
-
-const TECH_COLORS: Record<string, string> = {
-  Laravel: "#FF2D20",
-  Flutter: "#02569B",
-  "Node.js": "#339933",
-  Gemini: "#4285F4",
-  Kotlin: "#7F52FF",
-  React: "#61DAFB",
-};
-
 export function Hero() {
-  const [orbitR, setOrbitR] = useState(140);
-
-  useEffect(() => {
-    const check = () => setOrbitR(window.innerWidth < 640 ? 110 : 140);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   return (
     <section
@@ -147,38 +121,47 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
           className="relative flex items-center justify-center"
         >
-          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 overflow-hidden">
-            {/* Orbit ring */}
-            <div className="absolute inset-0 rounded-full border border-purple-500/20" />
-            <div className="absolute inset-4 rounded-full border border-purple-500/10" />
+          <div className="relative w-60 h-60 sm:w-68 sm:h-68 md:w-76 md:h-76 overflow-hidden">
+            {/* Orbit rings — like planetary paths */}
+            <div className="absolute inset-0 rounded-full border border-purple-500/15" />
+            <div className="absolute inset-5 rounded-full border border-purple-500/10" />
+            <div className="absolute inset-10 rounded-full border border-purple-500/5" />
 
-            {/* Orbiting tech icons */}
-            <div className="absolute inset-0 animate-[spin_20s_linear_infinite]">
-              {ORBIT_TECH_LIST.map((tech) => {
-                const rad = (tech.angle * Math.PI) / 180;
-                const r = orbitR;
+            {/* Orbiting tech icons — like planets around the sun */}
+            <div className="absolute inset-0 animate-[spin_25s_linear_infinite]">
+              {PROFILE_DATA.stack.map((tech, i) => {
+                const ringIndex = i % 3;
+                const countInRing = ringIndex === 2 ? 3 : 4;
+                const positionInRing = Math.floor(i / 3);
+                const angle = (positionInRing / countInRing) * 360 + ringIndex * 20;
+                const rad = (angle * Math.PI) / 180;
+                const r = 85 + ringIndex * 30;
                 const x = Math.round(Math.cos(rad) * r);
                 const y = Math.round(Math.sin(rad) * r);
+                const Icon = TECH_ICONS[tech];
                 return (
                   <div
-                    key={tech.name}
+                    key={tech}
                     className="absolute top-1/2 left-1/2 w-8 h-8 -ml-4 -mt-4"
                     style={{ transform: `translate(${x}px, ${y}px)` }}
                   >
                     <div
-                      className="w-8 h-8 rounded-full glass flex items-center justify-center text-[7px] font-bold animate-[counter-spin_20s_linear_infinite]"
-                      style={{ color: TECH_COLORS[tech.name] || "#fff" }}
-                      title={tech.name}
+                      className="w-8 h-8 rounded-full glass flex items-center justify-center animate-[counter-spin_25s_linear_infinite] hover:border-purple-500/30 hover:scale-125 transition-all duration-300"
+                      title={tech}
                     >
-                      {tech.name.slice(0, 2)}
+                      {Icon ? (
+                        <Icon className="w-3.5 h-3.5" style={{ color: TECH_COLORS[tech] || "#fff" }} />
+                      ) : (
+                        <span className="text-[6px] font-bold text-white">{tech.slice(0, 2)}</span>
+                      )}
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Profile Image */}
-            <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-purple-500/30 glow-purple">
+            {/* Profile Image — the sun */}
+            <div className="absolute inset-11 rounded-full overflow-hidden border-2 border-purple-500/30 glow-purple">
               <Image
                 src={PROFILE_DATA.avatar}
                 alt={PROFILE_DATA.name}

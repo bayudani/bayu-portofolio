@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { FaGithub as FaGithubIcon } from "react-icons/fa";
 import { PROJECTS } from "@/src/data/projects";
 import { notFound } from "next/navigation";
+import { BreadcrumbJsonLd } from "@/src/components/shared/BreadcrumbJsonLd";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -52,7 +53,13 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   return (
-    <main className="relative z-10">
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", item: "/" },
+        { name: "Projects", item: "/projects" },
+        { name: project.title, item: `/projects/${project.slug}` },
+      ]} />
+      <main className="relative z-10">
       <section className="relative py-20 md:py-32 px-4 z-10">
         <div className="max-w-4xl mx-auto">
           {/* Back button */}
@@ -168,5 +175,6 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
     </main>
+    </>
   );
 }

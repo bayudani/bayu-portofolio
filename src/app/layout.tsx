@@ -147,16 +147,6 @@ const jsonLd = {
       },
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://bayudanikurniawan.byvictech.site/#breadcrumb",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://bayudanikurniawan.byvictech.site/" },
-        { "@type": "ListItem", position: 2, name: "About", item: "https://bayudanikurniawan.byvictech.site/about" },
-        { "@type": "ListItem", position: 3, name: "Projects", item: "https://bayudanikurniawan.byvictech.site/projects" },
-        { "@type": "ListItem", position: 4, name: "Contact", item: "https://bayudanikurniawan.byvictech.site/contact" },
-      ],
-    },
-    {
       "@type": "FAQPage",
       "@id": "https://bayudanikurniawan.byvictech.site/#faq",
       mainEntity: FAQ_DATA.map((item) => ({

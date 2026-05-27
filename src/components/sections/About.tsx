@@ -1,19 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/src/components/shared/Reveal";
 import { SectionHeading } from "@/src/components/shared/SectionHeading";
 import { PROFILE_DATA } from "@/src/data/profile";
-import { Code2, Smartphone, Brain, Globe } from "lucide-react";
-
-const EXPERTISE = [
-  { icon: Code2, label: "Web Development", desc: "Fullstack web apps with Laravel, Express, React & modern frameworks" },
-  { icon: Smartphone, label: "Mobile Development", desc: "Cross-platform & native mobile apps with Flutter & Kotlin" },
-  { icon: Brain, label: "AI Integration", desc: "AI-powered features using Gemini AI, Open router" },
-  { icon: Globe, label: "AR Experiences", desc: "Augmented reality applications with ARCore & Unity" },
-];
-
+import { TECH_ICONS, TECH_COLORS } from "@/src/data/tech-icons";
 
 export function About() {
+  const total = PROFILE_DATA.stack.length;
+
   return (
     <section id="about" className="relative py-20 md:py-32 px-4 z-10">
       <div className="max-w-7xl mx-auto">
@@ -41,33 +36,69 @@ export function About() {
               </p>
 
               <div className="flex flex-wrap gap-3 pt-4">
-                {PROFILE_DATA.stack.slice(0, 8).map((tech) => (
-                  <span
-                    key={tech}
-                    className="glass rounded-lg px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-purple-400 hover:border-purple-500/30 transition-all duration-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {PROFILE_DATA.stack.slice(0, 8).map((tech) => {
+                  const Icon = TECH_ICONS[tech];
+                  return (
+                    <span
+                      key={tech}
+                      className="inline-flex items-center gap-2 glass rounded-lg px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-purple-400 hover:border-purple-500/30 transition-all duration-300"
+                    >
+                      {Icon && <Icon className="w-3.5 h-3.5" style={{ color: TECH_COLORS[tech] }} />}
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </Reveal>
 
           <Reveal direction="right" delay={0.2}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {EXPERTISE.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.label}
-                    className="glass rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-500 group"
-                  >
-                    <Icon className="w-8 h-8 text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-white font-semibold mb-2">{item.label}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                );
-              })}
+            <div className="relative flex items-center justify-center">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
+                {/* Orbit rings */}
+                <div className="absolute inset-0 rounded-full border border-purple-500/20" />
+                <div className="absolute inset-4 rounded-full border border-purple-500/10" />
+
+                {/* Orbiting tech icons */}
+                <div className="absolute inset-0 animate-[spin_20s_linear_infinite]">
+                  {PROFILE_DATA.stack.map((tech, i) => {
+                    const angle = (i / total) * 360;
+                    const rad = (angle * Math.PI) / 180;
+                    const r = 130;
+                    const x = Math.round(Math.cos(rad) * r);
+                    const y = Math.round(Math.sin(rad) * r);
+                    const Icon = TECH_ICONS[tech];
+                    return (
+                      <div
+                        key={tech}
+                        className="absolute top-1/2 left-1/2 w-10 h-10 -ml-5 -mt-5"
+                        style={{ transform: `translate(${x}px, ${y}px)` }}
+                      >
+                        <div
+                          className="w-10 h-10 rounded-full glass flex items-center justify-center animate-[counter-spin_20s_linear_infinite] hover:border-purple-500/30 hover:scale-110 transition-all duration-300"
+                          title={tech}
+                        >
+                          {Icon ? (
+                            <Icon className="w-5 h-5" style={{ color: TECH_COLORS[tech] || "#fff" }} />
+                          ) : (
+                            <span className="text-[7px] font-bold text-white">{tech.slice(0, 2)}</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Profile Image */}
+                <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-purple-500/30 glow-purple">
+                  <Image
+                    src={PROFILE_DATA.avatar}
+                    alt={PROFILE_DATA.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>

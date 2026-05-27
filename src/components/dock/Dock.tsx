@@ -5,11 +5,6 @@ import {
   Home,
   User,
   FolderKanban,
-  Award,
-  GraduationCap,
-  Briefcase,
-  MapPin,
-  Cpu,
   Mail,
 } from "lucide-react";
 import Link from "next/link";
@@ -19,11 +14,6 @@ const NAV_ITEMS = [
   { label: "Home", href: "/", icon: Home },
   { label: "About", href: "/about", icon: User },
   { label: "Projects", href: "/projects", icon: FolderKanban },
-  { label: "Achievement", href: "/achievement", icon: Award },
-  { label: "Education", href: "/education", icon: GraduationCap },
-  { label: "Experience", href: "/experience", icon: Briefcase },
-  { label: "Journey", href: "/journey", icon: MapPin },
-  { label: "Tech Stack", href: "/tech", icon: Cpu },
   { label: "Contact", href: "/contact", icon: Mail },
 ];
 

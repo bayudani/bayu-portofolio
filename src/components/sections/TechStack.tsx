@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "@/src/components/shared/Reveal";
 import { SectionHeading } from "@/src/components/shared/SectionHeading";
 import { PROFILE_DATA } from "@/src/data/profile";
+import { TECH_ICONS, TECH_COLORS } from "@/src/data/tech-icons";
 import {
   Code2, Database, Smartphone, Cpu, CuboidIcon as Cube, Brain,
 } from "lucide-react";
@@ -73,6 +74,7 @@ export function TechStack() {
               const radius = 90 + (i % 3) * 30;
               const angle = (i / PROFILE_DATA.stack.length) * 360;
               const delay = i * 0.5;
+              const Icon = TECH_ICONS[tech];
 
               return (
                 <motion.div
@@ -88,12 +90,17 @@ export function TechStack() {
                     transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: delay / 30 }}
                   >
                     <div
-                      className="absolute glass rounded-lg px-3 py-1.5 text-xs font-medium text-muted-foreground whitespace-nowrap hover:border-purple-500/30 hover:text-purple-400 transition-all"
+                      className="absolute w-10 h-10 -ml-5 -mt-5 rounded-full glass flex items-center justify-center hover:border-purple-500/30 hover:scale-110 transition-all duration-300"
                       style={{
                         transform: `rotate(${angle}deg) translateX(${radius}px) rotate(-${angle}deg)`,
                       }}
+                      title={tech}
                     >
-                      {tech}
+                      {Icon ? (
+                        <Icon className="w-5 h-5" style={{ color: TECH_COLORS[tech] || "#fff" }} />
+                      ) : (
+                        <span className="text-[7px] font-bold text-white">{tech.slice(0, 2)}</span>
+                      )}
                     </div>
                   </motion.div>
                 </motion.div>

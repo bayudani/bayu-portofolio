@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Experience } from "@/src/components/sections/Experience";
+import { BreadcrumbJsonLd } from "@/src/components/shared/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -14,8 +15,13 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <main className="relative z-10">
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", item: "/" },
+        { name: "About", item: "/about" },
+        { name: "Experience", item: "/about/experience" },
+      ]} />
       <Experience />
-    </main>
+    </>
   );
 }

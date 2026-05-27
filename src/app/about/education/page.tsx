@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Education } from "@/src/components/sections/Education";
+import { BreadcrumbJsonLd } from "@/src/components/shared/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -14,8 +15,13 @@ export const metadata: Metadata = {
 
 export default function EducationPage() {
   return (
-    <main className="relative z-10">
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", item: "/" },
+        { name: "About", item: "/about" },
+        { name: "Education", item: "/about/education" },
+      ]} />
       <Education />
-    </main>
+    </>
   );
 }

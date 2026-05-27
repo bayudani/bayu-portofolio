@@ -12,10 +12,18 @@ export const metadata: Metadata = {
   },
 };
 
+import { BreadcrumbJsonLd } from "@/src/components/shared/BreadcrumbJsonLd";
+
 export default function ContactPage() {
   return (
-    <main className="relative z-10">
-      <Contact />
-    </main>
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", item: "/" },
+        { name: "Contact", item: "/contact" },
+      ]} />
+      <main className="relative z-10">
+        <Contact />
+      </main>
+    </>
   );
 }

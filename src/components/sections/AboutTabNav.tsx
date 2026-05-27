@@ -22,32 +22,32 @@ export function AboutTabNav() {
   )?.id ?? "bio";
 
   return (
-    <div className="w-full overflow-x-auto scrollbar-none">
-      <div className="glass rounded-2xl px-2 py-2 flex items-center gap-1 min-w-max mx-auto">
+    <nav className="w-full overflow-x-auto scrollbar-none" aria-label="About sections">
+      <div className="flex items-center gap-0 min-w-max mx-auto border-b border-white/5">
         {ABOUT_TABS.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
             <Link
               key={tab.id}
               href={tab.href}
-              className="relative px-4 py-2 text-sm font-medium rounded-xl transition-colors whitespace-nowrap"
+              className="relative px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium whitespace-nowrap transition-colors"
               aria-label={tab.label}
               aria-current={isActive ? "page" : undefined}
             >
+              <span className={`${isActive ? "text-purple-400" : "text-muted-foreground hover:text-foreground"}`}>
+                {tab.label}
+              </span>
               {isActive && (
                 <motion.div
-                  layoutId="about-active-tab"
-                  className="absolute inset-0 bg-purple-600/20 rounded-xl border border-purple-500/30"
+                  layoutId="about-active-line"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500 rounded-full"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
-              <span className={`relative z-10 ${isActive ? "text-purple-400" : "text-muted-foreground hover:text-foreground"}`}>
-                {tab.label}
-              </span>
             </Link>
           );
         })}
       </div>
-    </div>
+    </nav>
   );
 }

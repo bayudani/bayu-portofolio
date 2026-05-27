@@ -32,6 +32,10 @@ export const metadata: Metadata = {
   applicationName: "Bayu Dani Kurniawan Portfolio",
   description:
     "Fullstack Developer & Mobile Engineer specializing in web applications, mobile apps, AI-integrated systems, and augmented reality experiences. Based in Bengkalis, Riau, Indonesia.",
+  other:{
+    "apple-mobile-web-app-title":"Bayu Dani Kurniawan Portfolio",
+    "application-name":"Bayu Dani Kurniawan Portfolio"
+  },
   keywords: [
     "Bayu Dani Kurniawan",
     "Fullstack Developer",
@@ -57,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://bayudanikurniawan.byvictech.site",
-    siteName: "Bayu Dani Kurniawan",
+    siteName: "Bayu Dani Kurniawan Portfolio",
     title: "Bayu Dani Kurniawan | Fullstack Developer & Mobile Engineer",
     description:
       "Fullstack Developer & Mobile Engineer specializing in web applications, mobile apps, AI-integrated systems, and augmented reality experiences.",
@@ -139,12 +143,20 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://bayudanikurniawan.byvictech.site/#website",
       url: "https://bayudanikurniawan.byvictech.site",
-      name: "Bayu Dani Kurniawan",
+      name: "Bayu Dani Kurniawan Portfolio",
+      alternateName: "Bayu Dani Kurniawan",
       description:
         "Fullstack Developer & Mobile Engineer specializing in web applications, mobile apps, AI-integrated systems, and augmented reality experiences.",
       publisher: {
         "@id": "https://bayudanikurniawan.byvictech.site/#person",
       },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bayudanikurniawan.byvictech.site/#organization",
+      name: "Bayu Dani Kurniawan Portfolio",
+      url: "https://bayudanikurniawan.byvictech.site",
+      logo: "https://bayudanikurniawan.byvictech.site/og-image.png",
     },
     {
       "@type": "FAQPage",
